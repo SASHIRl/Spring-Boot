@@ -1,6 +1,7 @@
 package com.sashiri.spring;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -10,8 +11,8 @@ public class HomeController {
 
     //Indica um endpoint(endereço) ao utilizador
     @RequestMapping("/")
-    public String homeApp() {
-
+    public String homeApp(Model model) {
+        model.addAttribute("mensagem", "Mensagem injetada através do Model");
         return "index";
     }
 }
